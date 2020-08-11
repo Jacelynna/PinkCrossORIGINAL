@@ -1,0 +1,61 @@
+﻿@page
+@model PinkCross.Pages.DonorProfiles.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Donor Profile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DonorProfile.DonorName" class="control-label"></label>
+                <input asp-for="DonorProfile.DonorName" class="form-control" />
+                <span asp-validation-for="DonorProfile.DonorName" class="text-danger"></span>
+                <p><span style="color :slateblue ;">*Required</span>  </p>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorProfile.Donornric" class="control-label"></label>
+                <input asp-for="DonorProfile.Donornric" class="form-control" />
+                <span asp-validation-for="DonorProfile.Donornric" class="text-danger"></span>
+                <p><span style="color : slateblue ;">*Required</span>  </p>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorProfile.CompanyName" class="control-label"></label>
+                <input asp-for="DonorProfile.CompanyName" class="form-control" />
+                <span asp-validation-for="DonorProfile.CompanyName" class="text-danger"></span>
+                <p><span style="color : slateblue ;">*Required</span>  </p>
+                <p><span style="color : slateblue ;">Enter NA if you are an donating as an individual</span>  </p>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorProfile.DonorNumber" class="control-label"></label>
+                <input asp-for="DonorProfile.DonorNumber" class="form-control" />
+                <span asp-validation-for="DonorProfile.DonorNumber" class="text-danger"></span>
+                <p><span style="color : slateblue ;">*Required</span>  </p>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonorProfile.DonorAddress" class="control-label"></label>
+                <input asp-for="DonorProfile.DonorAddress" class="form-control" />
+                <span asp-validation-for="DonorProfile.DonorAddress" class="text-danger"></span>
+                <p><span style="color : slateblue ;">Optional</span>  </p>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

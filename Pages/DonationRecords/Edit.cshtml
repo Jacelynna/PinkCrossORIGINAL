@@ -1,0 +1,60 @@
+﻿@page
+@model PinkCross.Pages.DonationRecords.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Donation Record</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DonationRecord.ID" />
+            <div class="form-group">
+                <label asp-for="DonationRecord.DateOfDonation" class="control-label"></label>
+                <input asp-for="DonationRecord.DateOfDonation" class="form-control" />
+                <span asp-validation-for="DonationRecord.DateOfDonation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonationRecord.ModeOfDonation" class="control-label"></label>
+                <input asp-for="DonationRecord.ModeOfDonation" class="form-control" />
+                <span asp-validation-for="DonationRecord.ModeOfDonation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonationRecord.DonationAmount" class="control-label"></label>
+                <input asp-for="DonationRecord.DonationAmount" class="form-control" />
+                <span asp-validation-for="DonationRecord.DonationAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonationRecord.PurposeOfDonation" class="control-label"></label>
+                <input asp-for="DonationRecord.PurposeOfDonation" class="form-control" />
+                <span asp-validation-for="DonationRecord.PurposeOfDonation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonationRecord.DonorType" class="control-label"></label>
+                <input asp-for="DonationRecord.DonorType" class="form-control" />
+                <span asp-validation-for="DonationRecord.DonorType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonationRecord.CompanyName" class="control-label"></label>
+                <input asp-for="DonationRecord.CompanyName" class="form-control" />
+                <span asp-validation-for="DonationRecord.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

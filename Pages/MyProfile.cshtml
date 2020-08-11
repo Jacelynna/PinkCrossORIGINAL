@@ -1,0 +1,41 @@
+﻿@page
+@model PinkCross.Pages.MyProfileModel
+@{
+    ViewData["Title"] = "My Profile";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h4>Profile</h4>
+
+<div class="row">
+    <div class="col-md-6">
+        <form id="profile-form" method="post">
+            <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                <ul>
+                    <li style="display:none"></li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="Username">Username</label>
+                <input class="form-control" disabled type="text" id="Username" name="Username" value="Jacelyn Na " />
+            </div>
+            <div class="form-group">
+                <label for="CompanyName">Company Name </label>
+                <input class="form-control" disabled type="text" id="CompanyName" name="CompanyName" value="Republic Poly" />
+            </div>
+            <div class="form-group">
+                <label for="Input_PhoneNumber">Phone number</label>
+                <input class="form-control" type="tel" data-val="true" data-val-phone="The Phone number field is not a valid phone number." id="Input_PhoneNumber" name="Input.PhoneNumber" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.PhoneNumber" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label for="DonorAddress">House Address  </label>
+                <input class="form-control" disabled type="text" id="DonorAddress" name="DonorAddress" value="123 Hougang Avenue 8" />
+            </div>
+            <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8B5NlOno2JFKkTab8wnKXmCZMEwppiokr3hvfxVL2v83AsdXdsOHpiVNGBjMKgBdiUs_wmFkyOAvL3vHM0lKh-7urD2X0HHCzf8y5oKXLl-dPjwYNKlKmBwsHoforIirJHsaUF6ndKxCM4eNzDXuDfqsGlw5oCvuJMVT994invVs3NjJj9zw9gqL-Y2tYyJlNA" />
+
+        </form>
+    </div>
+</div>
+

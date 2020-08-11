@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[DonationRecord] (
+    [ID]                INT             IDENTITY (1, 1) NOT NULL,
+    [DateOfDonation]    DATETIME2 (7)   NOT NULL,
+    [ModeOfDonation]    NVARCHAR (MAX)  NOT NULL,
+    [DonationAmount]    DECIMAL (18, 2) NOT NULL,
+    [PurposeOfDonation] NVARCHAR (MAX)  NOT NULL,
+    [DonorType]         NVARCHAR (MAX)  NOT NULL,
+    [CompanyName]       NVARCHAR (MAX)  NOT NULL,
+    CONSTRAINT [PK_DonationRecord] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+CREATE TABLE [dbo].[DonorProfile] (
+    [ID]           INT            IDENTITY (1, 1) NOT NULL,
+    [DonorName]    NVARCHAR (MAX) NOT NULL,
+    [Donornric]    NVARCHAR (60)  NOT NULL,
+    [CompanyName]  NVARCHAR (MAX) NULL,
+    [DonorNumber]  NVARCHAR (60)  NULL,
+    [DonorAddress] NVARCHAR (MAX) NULL,
+    [DonorEmail]   NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Donornric] ASC)
+);
+
+CREATE TABLE [dbo].[User] (
+    [Username_id] VARCHAR (45)   NOT NULL,
+    [Password]    VARBINARY (20) NOT NULL,
+    [Role]        VARCHAR (45)   NULL,
+    [Donornric]   VARCHAR (9)    NULL,
+    PRIMARY KEY CLUSTERED ([Username_id] ASC)
+);
+
